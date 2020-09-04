@@ -1,6 +1,83 @@
-# Se o erro for 400  redireciona para /error/index.php?error=400
+Options +Indexes
+
 ErrorDocument 400  /error/400.html
 ErrorDocument 401  /error/401.html
 ErrorDocument 403  /error/403.html
 ErrorDocument 404  /error/404.html
 ErrorDocument 500  /error/500.html
+
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
+
+# DIRECTORY CUSTOMIZATION
+<IfModule mod_autoindex.c>
+  # IGNORE FILES
+  IndexIgnoreReset ON
+  IndexIgnore .ftpquota .DS_Store .git
+
+  # ICONS
+  DefaultIcon /includes/icons/file-text.svg
+
+  AddIcon /includes/icons/back.svg ..
+  AddIcon /includes/icons/github.svg .github
+  AddIcon /includes/icons/nodejs.svg node_modules
+  AddIcon /includes/icons/file-directory.svg ^^DIRECTORY^^
+
+  AddIcon /includes/icons/file-binary.svg .com .exe
+  AddIcon /includes/icons/file-code.svg .c .h .mustache .rust .source .apache .yml .jade
+  AddIcon /includes/icons/file-media.svg .png .jpg .jpeg .webp .gif .bmp .mp4 .webm .ogv .mov .ico
+  AddIcon /includes/icons/file-pdf.svg .pdf
+  AddIcon /includes/icons/file-text.svg .txt .srt README readme Procfile
+  AddIcon /includes/icons/file-zip.svg .zip .z .gz .Z .tgz .tar.gz .tar .rar
+  AddIcon /includes/icons/gear.svg .htaccess .env .env-dev .env-production .env-staging
+  AddIcon /includes/icons/config.svg .conf .ini .cfg .prefs
+  AddIcon /includes/icons/less.svg .less
+  AddIcon /includes/icons/css.svg .css
+  AddIcon /includes/icons/html.svg .html .htm
+  AddIcon /includes/icons/coffee.svg .coffee
+  AddIcon /includes/icons/java.svg .java
+  AddIcon /includes/icons/markdown.svg .markdown .md
+  AddIcon /includes/icons/eslint.svg *.eslintignore *.eslintrc.js *.eslintrc.json *.eslintrc *.eslintrc.yml
+  AddIcon /includes/icons/webpack.svg webpack.config.js
+  AddIcon /includes/icons/rollup.svg rollup.config.js
+  AddIcon /includes/icons/postcss.svg postcss.config.js *.postcssrc *.postcssrc.json *.postcssrc.js *.postcssrc.yml
+  AddIcon /includes/icons/grunt.svg gruntfile.js Gruntfile.js
+  AddIcon /includes/icons/gulp.svg gulpfile.js Gulpfile.js
+  AddIcon /includes/icons/js.svg .js
+  AddIcon /includes/icons/composer.svg composer.json composer.lock composer.phar
+  AddIcon /includes/icons/bower.svg bower.json
+  AddIcon /includes/icons/npm.svg package.json package-lock.json
+  AddIcon /includes/icons/settings.svg .json
+  AddIcon /includes/icons/mustache.svg .mustache
+  AddIcon /includes/icons/php.svg .php
+  AddIcon /includes/icons/python.svg .py
+  AddIcon /includes/icons/ruby.svg .rb
+  AddIcon /includes/icons/rust.svg .rust
+  AddIcon /includes/icons/sass.svg .sass
+  AddIcon /includes/icons/scss.svg .scss
+  AddIcon /includes/icons/svg.svg .svg .svgx .eps
+  AddIcon /includes/icons/xml.svg .xml
+  AddIcon /includes/icons/typescript.svg .ts
+  AddIcon /includes/icons/vue.svg .vue
+  AddIcon /includes/icons/yarn.svg yarn.lock
+  AddIcon /includes/icons/babel.svg *.babelrc
+  AddIcon /includes/icons/git.svg *.gitignore *.gitattributes
+  AddIcon /includes/icons/editor-config.svg .editorconfig
+  AddIcon /includes/icons/shopify.svg .liquid
+  AddIcon /includes/icons/nunjucks.svg .nunjucks
+  AddIcon /includes/icons/pug.svg .pug
+  AddIcon /includes/icons/adobe-photoshop.svg .psd
+  AddIcon /includes/icons/adobe-illustrator.svg .ai
+  AddIcon /includes/icons/stylus.svg .styl
+  AddIcon /includes/icons/terminal.svg .sh .bash
+  AddIcon /includes/icons/database.svg .sql .mysql .sqlite .dsql .db
+  AddIcon /includes/icons/vagrant.svg vagrantfile Vagrantfile
+  AddIcon /includes/icons/file-word.svg .doc .docx
+  AddIcon /includes/icons/file-excel.svg .xls .xlsx
+  AddIcon /includes/icons/yaml.svg .yml .yaml
+  AddIcon /includes/icons/brainfuck.svg .b
+  AddIcon /includes/icons/cobol.svg .cbl .cob .cpy
+  AddIcon /includes/icons/docker.svg docker-compose.yml
+  AddIcon /includes/icons/VirtualBox.svg .ova .vbox
+
+</IfModule>

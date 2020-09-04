@@ -1,0 +1,37 @@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script>
+        <script>
+            var ths = document.getElementsByTagName('th');
+            var tds = document.getElementsByTagName('td');
+            var as = document.getElementsByTagName('a');
+
+            for(var i=0; i < ths.length; i++){
+                if(ths[i].innerHTML=='Name'){
+                    ths[i].innerHTML = 'Nome';
+                }
+                if(ths[i].innerHTML=='Last modified'){
+                    ths[i].innerHTML = 'Última alteração';
+                }
+                if(ths[i].innerHTML=='Size'){
+                    ths[i].innerHTML = 'Tamanho';
+                }
+            }
+
+            for(var i=0; i < as.length; i++){
+                if(as[i].innerHTML=='Parent Directory'){
+                    as[i].innerHTML = 'Voltar';
+                }
+            }
+
+            for(var i=0; i < tds.length; i++){
+                var mDate = moment(tds[i].innerHTML);
+                if(mDate.isValid()){
+                    tds[i].innerHTML = mDate.format("DD/MM/YYYY HH:mm");
+                }
+            }
+        </script>
+    </body>
+</html>
